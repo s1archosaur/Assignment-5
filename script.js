@@ -20,3 +20,31 @@ let totalHearts = document.getElementsByClassName('heart-icon');
         });
 }
 
+let copy = 0;    
+
+    let copyBtns = document.getElementsByClassName('copy-btn');
+    for (let i = 0; i < copyBtns.length; i++) 
+        {
+        copyBtns[i].addEventListener('click', async function(event) {
+            let card = event.target.parentNode.parentNode.parentNode;
+            let number = card.querySelector('.number').innerText;
+            let service = card.querySelector('.service').innerText;
+            if (await clipboardCopy(number)) 
+                {
+                    copy++;
+                    document.getElementById('copy').innerText = copy;
+                    alert(service + ' - এর নাম্বারটি (' + number + ') কপি করা হয়েছে।');
+                }
+        });
+}
+
+async function clipboardCopy(text) {
+    try {
+            await navigator.clipboard.writeText(text);
+            return true;
+        } 
+    catch {
+            return false;
+        }
+}
+

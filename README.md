@@ -1,4 +1,4 @@
-## **1. Difference between **getElementById**, **getElementsByClassName**, **querySelector/querySelectorAll** **
+## **1. Difference between getElementById, getElementsByClassName, querySelector/querySelectorAll**
 
 ### **getElementById("id")**
 
